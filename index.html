@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website redesign for the design-build industry. Position yourself as an industry leader and become your dream clients' first choice.">
+  <title>Websites for Design + Build Pros</title>
+  <link rel="preload" href="assets/magiora.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/hero-desktop.webp" as="image" fetchpriority="high" media="(min-width:768px)">
+  <link rel="preload" href="assets/hero-mobile.webp" as="image" fetchpriority="high" media="(max-width:767px)">
+  <style>
+    @font-face{font-family:Magiora;src:url('assets/magiora.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:Inter;src:url('assets/inter.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+    @font-face{font-family:'Red Hat Display';src:url('assets/red-hat-display.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:#333;font:16px/1.5 Arial,sans-serif}
+    h1,p{margin:0}
+    .hero{min-height:100vh;background:#ccc2c2 url('assets/hero-desktop.webp') bottom center/cover no-repeat}
+    .hero-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;column-gap:50px;row-gap:20px;max-width:1200px;min-height:100vh;margin:auto;padding-top:80px}
+    .copy{display:flex;flex-direction:column;gap:20px;min-width:0}
+    h1{font:400 80px/1 Magiora,sans-serif;letter-spacing:-3.5px;color:#3a3a3a}
+    .subheading{font:500 19px/31px Inter,sans-serif;letter-spacing:-1.3px;color:#595959}
+    .cta{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:15px 30px;border:1px solid #a5a5a5;border-radius:20px;background:#3b3b3b;box-shadow:0 0 10px #a3a3a3;color:#e7e7e7;font:400 22px/1 Inter,sans-serif;letter-spacing:-1.5px;text-decoration:none;text-align:center;transition:background-color .3s,color .3s}
+    .cta:hover,.cta:focus{background:#ccc;color:#383838}
+    .cta:focus-visible{outline:3px solid #464236;outline-offset:4px}
+    .cta svg{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+    .cta--desktop{align-self:flex-start}
+    .cta--desktop svg{order:-1}
+    .video-column{display:flex;flex-direction:column;gap:20px;min-width:0}
+    .video-intro{display:flex;flex-direction:column;gap:5px}
+    .video-caption{margin:0;color:#737373;font:italic 400 15px/1.5 Inter,sans-serif;letter-spacing:-1.3px;text-align:center}
+    .video-divider{display:none;width:60%;align-self:center;margin:0 0 15px;border:0;border-top:1px solid #595959}
+    .responsive-wistia{position:relative;width:100%;aspect-ratio:16/9}
+    .responsive-wistia iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .mobile-cta{display:none}
+    .booking{display:block;padding:10px}
+    .site-footer{background:#1f1f1f;color:#fff}
+    .footer-inner{display:flex;justify-content:center;max-width:1350px;margin:auto;padding:30px 0}
+    .footer-copy{max-width:100%;font:400 15px/1.5 'Red Hat Display',sans-serif;text-align:center}
+    .footer-copy p{margin:0 0 .9rem}
+    @media(max-width:1425px){
+      .hero-inner{width:85%;max-width:none;padding-top:0}
+      h1{font-size:67px;line-height:67px}
+    }
+    @media(max-width:1024px){
+      .hero,.hero-inner{min-height:885px}
+      .hero-inner{display:flex;flex-direction:column;align-items:center;gap:20px;padding:150px 0 80px}
+      .copy{width:100%;gap:10px;align-items:center;justify-content:center}
+      h1{font-size:76px;line-height:1;text-align:center}
+      .subheading{max-width:100%;align-self:center}
+      .cta--desktop{display:none}
+      .video-column{width:100%}
+      .video-divider{display:block}
+      .mobile-cta{display:block;text-align:center}
+      .mobile-cta .cta{font-size:40px;letter-spacing:-1.4px}
+      .booking{display:block;padding:10px}
+      .calendar{width:100%;height:100%;overflow:auto;scrollbar-width:none}
+      .calendar::-webkit-scrollbar{display:none}
+      .footer-inner{padding:30px}
+    }
+    @media(max-width:767px){
+      .hero{min-height:100vh;padding:0 12px;background-image:url('assets/hero-mobile.webp');background-position:top center}
+      .hero-inner{width:100%;min-height:100vh;padding:120px 0 100px}
+      h1{width:100%;font-size:56px;line-height:1;letter-spacing:-2.5px}
+      .subheading{width:100%;font-size:18px;line-height:1.5;letter-spacing:-1px;text-align:center}
+      .mobile-cta .cta{font-size:23px;letter-spacing:-2.6px;padding:17px 25px}
+      .responsive-wistia{aspect-ratio:9/16}
+      .video-caption{letter-spacing:-1px}
+      .booking{padding:0}
+      .footer-inner{padding:20px 10px 0}
+      .footer-copy{width:100%;padding:0 15px;font-size:13px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="headline">
+      <div class="hero-inner">
+        <div class="copy">
+          <h1 id="headline">Website Redesign for the Design-Build Industry</h1>
+          <p class="subheading">Position yourself as an industry leader, become your dream clients' first choice.</p>
+          <a class="cta cta--desktop" href="#book">Book Discovery Call<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>
+        </div>
+        <div class="video-column">
+          <div class="video-intro">
+            <hr class="video-divider">
+            <p class="video-caption">Watch the video below to see how i do it</p>
+            <div class="responsive-wistia">
+              <iframe loading="lazy" src="https://fast.wistia.net/embed/iframe/g7nexv7jzq?web_component=true&amp;seo=false&amp;videoFoam=false" title="Video player" allow="autoplay; fullscreen" allowfullscreen scrolling="no"></iframe>
+            </div>
+          </div>
+          <div class="mobile-cta"><a class="cta" href="#book">Book Discovery Call<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8m-4-4 4 4-4 4"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+    <section id="book" class="booking" aria-label="Book your discovery call">
+      <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-discover" class="calendar"></div>
+      <noscript><p><a href="https://cal.com/sumray-ha/discover">Book your discovery call</a></p></noscript>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner"><div class="footer-copy">
+      <p>This site is <b>not</b> a part of the Facebook website or Meta Platforms Inc. Additionally, this site is <b>NOT</b> endorsed by Meta in any way. Facebook and Instagram are trademarks of Meta Platforms, Inc.</p>
+      <p>© 2026 Valor Web Agency. All rights reserved.</p>
+    </div></div>
+  </footer>
+
+  <script>
+    // ponytail: count Cal's successful-booking event, never a Confirm button click.
+    const trackedBookings = new Set();
+    function trackBooking(event) {
+      const uid = event.detail?.data?.uid;
+      const key = typeof uid === 'string' && uid ? uid : 'current-page';
+      if (trackedBookings.has(key) || typeof window.fbq !== 'function') return;
+      try {
+        if (key !== 'current-page' && sessionStorage.getItem('cal-schedule:' + key)) return;
+      } catch {} // Tracking still works when browser storage is unavailable.
+      try {
+        fbq('trackSingle','1656922198355882','Schedule',{content_name:'Discovery Call'},
+          key === 'current-page' ? {} : {eventID:'cal-schedule:' + key});
+      } catch { return; } // An analytics failure must not interrupt booking confirmation.
+      trackedBookings.add(key);
+      try {
+        if (key !== 'current-page') sessionStorage.setItem('cal-schedule:' + key,'1');
+      } catch {}
+    }
+    // ponytail: load Cal.com only when the booking section becomes visible.
+    function loadCalendar() {
+      const calendar = document.getElementById('my-cal-inline-discover');
+      if (calendar.dataset.loaded) return;
+      calendar.dataset.loaded = 'true';
+      (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==='string'){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,['initNamespace',namespace])}else p(cal,ar);return}p(cal,ar)}})(window,'https://app.cal.com/embed/embed.js','init');
+      Cal('init','discover',{origin:'https://app.cal.com'});
+      Cal.config = Cal.config || {};
+      Cal.config.forwardQueryParams = true;
+      Cal.ns.discover('on',{action:'bookingSuccessfulV2',callback:trackBooking});
+      Cal.ns.discover('inline',{elementOrSelector:'#my-cal-inline-discover',config:{layout:'month_view',useSlotsViewOnSmallScreen:'true'},calLink:'sumray-ha/discover'});
+      Cal.ns.discover('ui',{hideEventTypeDetails:false,layout:'month_view'});
+    }
+    const bookingSection = document.getElementById('book');
+    let calendarObserver;
+    function prepareCalendar() {
+      if (document.getElementById('my-cal-inline-discover').dataset.loaded) return;
+      if (!('IntersectionObserver' in window)) {
+        loadCalendar();
+        return;
+      }
+      if (calendarObserver) return;
+      calendarObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio > 0)) {
+          loadCalendar();
+          calendarObserver.disconnect();
+          calendarObserver = null;
+        }
+      }, {rootMargin:'0px',threshold:0.01});
+      calendarObserver.observe(bookingSection);
+    }
+    prepareCalendar();
+
+    // Existing advertising pixel: one PageView for this page.
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=true;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=true;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1656922198355882');
+    fbq('track','PageView');
+  </script>
+</body>
+</html>

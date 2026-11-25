@@ -1,0 +1,11 @@
+# Local review screenshots and tools
+*.jpg
+Skills/
+.codex/
+.agents/
+node_modules/
+.env
+.env.*
+*.zip
+*.log
+
