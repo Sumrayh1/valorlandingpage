@@ -28,9 +28,11 @@ GitHub commits preserve the history and show changes. Revert a specific change w
 
 ## Hostinger
 
-The intended deployment is the `main` branch of this repository to **design.valorwebagency.com** only. The existing site directory is `/domains/valorwebagency.com/public_html/design`.
+The `main` branch automatically deploys to **design.valorwebagency.com** through Hostinger's native GitHub integration. The actual site directory is `/domains/valorwebagency.com/public_html/design`.
 
-In hPanel, open this website's **Advanced → GIT** page to connect the repository and inspect deployment status. The connection must be verified there before assuming that pushes publish automatically. Clear this website's cache after deploying if the previous version is still displayed.
+In hPanel, open this website's **Advanced → GIT** page to inspect deployment status or redeploy. Auto-deployment is enabled. Its root directory setting must be `public_html` with no extra subfolder: Hostinger already maps this website to the physical `design` directory. Clear this website's cache after deploying if the previous version is still displayed.
+
+Every push to `main` publishes to the live website. Check changes before pushing. `.htaccess` prevents public access to the Git metadata that Hostinger places in the deployment directory.
 
 Do not upload credentials, private booking information, or local screenshots. Do not deploy this repository over the parent website's directory.
 
